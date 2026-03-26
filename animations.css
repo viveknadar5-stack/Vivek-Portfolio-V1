@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════
+   ANIMATIONS.CSS
+   All animations for Portfolio V1
+   ═══════════════════════════════════════ */
+
+/* ─── KEYFRAME DEFINITIONS ─── */
+
+/* Fade in from bottom — hero content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);  /* Start 30px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);     /* End at normal position */
+    }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px); /* Start 30px to the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse — for logo dot */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }    /* Gets bigger then smaller */
+}
+
+/* Float — for hero image */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); } /* Floats up and down */
+}
+
+/* Glow — for orange border */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255,102,0,0.3); }
+    50% { box-shadow: 0 0 40px rgba(255,102,0,0.6); }
+}
+
+/* ─── APPLYING ANIMATIONS ─── */
+
+/* Hero content fades in from bottom */
+.hero-content {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+/* Hero image fades in from right */
+.hero-image {
+    animation: fadeInRight 0.8s ease 0.2s forwards;
+    /* 0.2s delay — starts slightly after content */
+}
+
+/* Hero image floats up and down */
+.hero-image img {
+    animation: float 3s ease-in-out infinite;
+    /* infinite = plays forever! */
+}
+
+/* Logo dot pulses */
+.logo-dot {
+    animation: pulse 2s ease infinite;
+}
+
+/* Skill cards fade in on load */
+.skill-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger skill cards — each one delays slightly */
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Section titles slide in */
+.section-title {
+    animation: fadeInUp 0.7s ease forwards;
+}
